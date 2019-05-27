@@ -1,2 +1,2 @@
-# random
-just some random stuffs
+# wordpress-deploy
+
