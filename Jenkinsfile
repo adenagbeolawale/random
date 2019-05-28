@@ -21,7 +21,7 @@ pipeline {
 							-var 'AWS_SECRET_ACCESS_KEY=${env.WP_AWS_SECRET_ACCESS_KEY}' \
 							-var 'DB_ADMIN=${env.WP_DB_ADMIN}' \
 							-var 'DB_PASSWORD=${env.WP_DB_PASSWORD}' \
-							-var 'PATH_TO_PUBLIC_KEY=$my_public_key' \
+							-var 'PATH_TO_PUBLIC_KEY=\$my_public_key' \
 							-out wordpressplan
 						'''
 					}
