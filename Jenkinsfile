@@ -10,6 +10,7 @@ pipeline {
 		PATH_TO_PUBLIC_KEY = credentials('aws_key_file')
 	}
 	stages {
+		export PATH=/usr/local/bin:$PATH
 		stage('Terraform Plan') {
 			steps {
 				sh '''
