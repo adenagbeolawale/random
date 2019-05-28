@@ -10,18 +10,8 @@ pipeline {
 		PATH_TO_PUBLIC_KEY = credentials('aws_key_file')
 	}
 
-	stages {
-
-		stage('Checkout Source') {
-			steps {
-        		sh 'wget https://github.com/adenagbeolawale/wordpress-deploy/archive/master.zip'
-        		sh 'unzip master.zip' 
-      		}
-    	}
-
     	stage('Terraform Plan') {
       		steps {
-          		sh 'cd wordpress-deploy-master'
           		sh 'terraform init'
           		sh 'terraform plan -out wordpressplan'
       		}      
@@ -44,12 +34,6 @@ pipeline {
     	stage('Archive Artifacts') {
 			steps {
 				archiveArtifacts artifacts: 'wordpressplan', fingerprint: true, onlyIfSuccessful: true
-			}
-    	}
-    	
-    	stage('Cleanup') {
-			steps {
-				sh 'rm master.zip'
 			}
     	}
 	}
