@@ -4,9 +4,9 @@ pipeline {
 
 	environment {
 		AWS_ACCESS_KEY_ID = credentials('aws_access_key_id')
-    	AWS_SECRET_ACCESS_KEY = credentials('aws_secret_access_key') 
-    	DB_ADMIN = credentials('wordpress_db_admin')
-    	DB_PASSWORD = credentials('wordpress_db_password')
+    		AWS_SECRET_ACCESS_KEY = credentials('aws_secret_access_key') 
+    		DB_ADMIN = credentials('wordpress_db_admin')
+    		DB_PASSWORD = credentials('wordpress_db_password')
 	}
 
 	stages {
