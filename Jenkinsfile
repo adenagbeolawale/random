@@ -12,10 +12,12 @@ pipeline {
 	stages {
 		stage('Terraform Plan') {
 			steps {
+				withEnv( ["PATH+TER=/usr/local/bin"] ) {
 				sh '''
 					terraform init
 					terraform plan -out wordpressplan
 				'''
+				}
 			}      
 		}
 	
