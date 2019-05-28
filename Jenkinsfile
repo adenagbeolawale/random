@@ -7,7 +7,7 @@ pipeline {
     		AWS_SECRET_ACCESS_KEY = credentials('aws_secret_access_key') 
     		DB_ADMIN = credentials('wordpress_db_admin')
     		DB_PASSWORD = credentials('wordpress_db_password')
-		PATH_TO_PUBLIC_KEY = credentials(aws_key_file)
+		PATH_TO_PUBLIC_KEY = credentials('aws_key_file')
 	}
 
 	stages {
