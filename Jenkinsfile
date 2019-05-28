@@ -13,7 +13,7 @@ pipeline {
 		stage('Terraform Plan') {
 			steps {
 				withEnv( ["PATH+TER=/usr/local/bin"] ) {
-					withCredentials([file(credentialsId: 'WP_PATH_TO_PUBLIC_KEY', variable: 'my_public_key')]) {
+					withCredentials([file(credentialsId: 'aws_key_file', variable: 'my_public_key')]) {
 						sh '''
 							terraform init
 							terraform plan \
