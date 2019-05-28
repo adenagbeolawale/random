@@ -17,7 +17,7 @@ pipeline {
 					printenv
 					terraform init
 					terraform plan \
-					-var "AWS_ACCESS_KEY_ID=${env.WP_AWS_ACCESS_KEY_ID}" \
+					-var 'AWS_ACCESS_KEY_ID=${env.WP_AWS_ACCESS_KEY_ID}' \
 					-var "AWS_SECRET_ACCESS_KEY=${env.WP_AWS_SECRET_ACCESS_KEY}" \
 					-var "DB_ADMIN=${env.WP_DB_ADMIN}" \
 					-var "DB_PASSWORD=${env.WP_DB_PASSWORD}" \
