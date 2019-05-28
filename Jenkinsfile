@@ -43,7 +43,7 @@ pipeline {
     
     	stage('Archive Artifacts') {
 			steps {
-				sh 'archiveArtifacts artifacts: 'wordpressplan', fingerprint: true, onlyIfSuccessful: true
+				archiveArtifacts artifacts: 'wordpressplan', fingerprint: true, onlyIfSuccessful: true
 			}
     	}
     	
