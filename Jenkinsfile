@@ -15,6 +15,7 @@ pipeline {
 				withEnv( ["PATH+TER=/usr/local/bin"] ) {
 				sh '''
 					#!/bin/bash -xe
+					echo "${env.WP_AWS_ACCESS_KEY_ID}"
 					terraform init
 					terraform plan \
 					-var "AWS_ACCESS_KEY_ID=${env.WP_AWS_ACCESS_KEY_ID}" \
